@@ -6,5 +6,10 @@ FactoryBot.define do
     password 'password'
     password_confirmation 'password'
   end
+end
 
+FactoryBot.define do
+  factory :museum do
+    sequence(:name) {|n| "Museum #{n}" }
+  end
 end
