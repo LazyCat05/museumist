@@ -1,11 +1,18 @@
 import React from 'react';
+import { Router, browserHistory, Route, IndexRoute } from 'react-router';
+
+
 import MuseumListContainer from './MuseumListContainer';
+import MuseumShow from '../components/MuseumShow';
 
 const App = props => {
   return(
-    <div>
-      <MuseumListContainer />
-    </div>
+    <Router history={browserHistory}>
+      <Route path='/'>
+        <IndexRoute component={MuseumListContainer}/>
+        <Route path="/museum/:id" component={MuseumShow} />
+      </Route>
+    </Router>
   )
 }
 

@@ -7,7 +7,10 @@ class MuseumListContainer extends Component {
     super(props);
     this.state = { museums: [] };
     this.getMuseums = this.getMuseums.bind(this);
+
+
   }
+
 
   getMuseums() {
     fetch('/api/v1/museums.json')
@@ -35,10 +38,13 @@ class MuseumListContainer extends Component {
 
   render() {
     let museumComponents = this.state.museums.map((museum) => {
+
       return (
-        <Museum
+        <Museum 
           key={ museum.id }
           name={ museum.name }
+          id={ museum.id }
+
         />
       );
     });
