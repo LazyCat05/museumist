@@ -37,11 +37,11 @@ render() {
         <div>
         <div><b>Details of Museum:</b></div>
         <div>
-          {this.state.museumInfo.name}<br/>
-          {this.state.museumInfo.location}<br/>
-          {this.state.museumInfo.description}<br/>
-          {this.state.museumInfo.founding_date}<br/>
-          {this.state.museumInfo.url}
+          <h1>{this.state.museumInfo.name}</h1><br/>
+          <p>{this.state.museumInfo.location}</p><br/>
+          <p>{this.state.museumInfo.description}</p><br/>
+          <p>{this.state.museumInfo.founding_date}</p><br/>
+          <p>{this.state.museumInfo.url}</p>
         </div>
       </div>
       )

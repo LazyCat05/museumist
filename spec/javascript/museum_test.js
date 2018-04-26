@@ -1,12 +1,9 @@
 import Museum from '../../app/javascript/components/Museum';
 
 describe('Museum', () => {
-  let name,
-      wrapper;
+  let wrapper;
 
   beforeEach(() => {
-    jasmineEnzyme();
-    // onClick = jasmine.createSpy('onClick spy');
     wrapper = mount(
       <Museum
         name = "Boston Children's Museum"
@@ -18,4 +15,12 @@ describe('Museum', () => {
   it('should render the Museum component', () => {
     expect(wrapper.find(Museum)).toBePresent();
   });
+
+  it('receives the correct props', () => {
+    expect(wrapper.find(Museum).props()).toEqual({name: "Boston Children's Museum"})
+  });
+
+  it('renders an "li" tag', () => {
+    expect(wrapper.find('li')).toBePresent()
+  })
 });
