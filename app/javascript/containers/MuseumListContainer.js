@@ -23,14 +23,12 @@ class MuseumListContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        console.log(body);
         this.setState({ museums: body.museums });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   componentDidMount() {
-    console.log("I am inside componentDidMount")
     this.getMuseums();
   }
 

@@ -8,8 +8,8 @@ FactoryBot.define do
   end
 end
 
-FactoryBot.define do
-  factory :museum do
-    sequence(:name) {|n| "Museum #{n}" }
-  end
-end
+# FactoryBot.define do 
+#   factory :museum do
+#     sequence(:name) {|n| "Museum #{n}" }
+#   end
+# end

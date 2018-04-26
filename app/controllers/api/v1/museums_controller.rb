@@ -8,13 +8,4 @@ class Api::V1::MuseumsController < ApiController
   def show
     render json: { museum: Museum.find(params[:id]) }
   end
-
-  # def create
-  #   fortune = Fortune.new(text: params[:fortune])
-  #   if fortune.save
-  #     render json: { fortune: fortune }
-  #   else
-  #     render json: { error: fortune.errors.full_messages }, status: :unprocessable_entity
-  #   end
-  # end
 end
