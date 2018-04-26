@@ -5,7 +5,7 @@ const Museum = (props) => {
   return (
     <div>
       <li key={props.id}>
-        <Link to={`museum/${props.id}`}>{ props.name }</Link>
+        <Link to={`museums/${props.id}`}>{ props.name }</Link> 
       </li>
     </div>
   );

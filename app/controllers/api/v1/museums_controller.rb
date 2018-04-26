@@ -5,6 +5,10 @@ class Api::V1::MuseumsController < ApiController
     render json: { museums: Museum.all }
   end
 
+  def show
+    render json: { museum: Museum.find(params[:id]) }
+  end
+
   # def create
   #   fortune = Fortune.new(text: params[:fortune])
   #   if fortune.save
