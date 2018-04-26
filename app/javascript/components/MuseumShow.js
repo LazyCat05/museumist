@@ -1,20 +1,16 @@
 import React from 'react';
 
-
-
 class MuseumShow extends React.Component {
   constructor(props){
       super(props)
       this.state = {
         museumInfo: {}
       }
+}
 
-  }
-
-  componentDidMount(){
-  let museumId = this.props.params.id
-
-  fetch(`/api/v1/museums/${museumId}`)
+componentDidMount(){
+let museumId = this.props.params.id
+fetch(`/api/v1/museums/${museumId}`)
 .then(response => {
 
   if (response.ok) {
@@ -34,12 +30,10 @@ class MuseumShow extends React.Component {
 
 })
 .catch(error => console.error(`Error in fetch: ${error.message}`));
-
 }
 
-  render() {
-
-      return(
+render() {
+    return(
         <div>
         <div><b>Details of Museum:</b></div>
         <div>
@@ -50,14 +44,8 @@ class MuseumShow extends React.Component {
           {this.state.museumInfo.url}
         </div>
       </div>
-
-
       )
     }
-
-
-
 }
-
 
 export default MuseumShow;
