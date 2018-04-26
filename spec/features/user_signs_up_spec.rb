@@ -13,7 +13,11 @@ feature 'user registers', %Q{
   #   an error message
 
   scenario 'provide valid registration information' do
-    visit new_user_registration_path
+    visit root_path
+
+    click_link('Sign Up')
+
+    expect(page).to have_content('Sign up')
 
     fill_in 'Email', with: 'john@example.com'
     fill_in 'Username', with: 'exampleuser'
