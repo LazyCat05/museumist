@@ -5,9 +5,3 @@ FactoryBot.define do
     location  "Boston"
   end
 end
-
-# FactoryBot.define do
-#   factory :museum do
-#     sequence(:name) {|n| "Museum #{n}" }
-#   end
-# end

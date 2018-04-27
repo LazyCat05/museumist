@@ -12,9 +12,9 @@ RSpec.describe Api::V1::MuseumsController, type: :controller do
       expect(response.status).to eq 200
       expect(response.content_type).to eq "application/json"
       expect(returned_json.length).to eq 1
-      expect(returned_json["museums"].length).to eq 2
+      expect(returned_json["museums"].length).to eq 4
       expect(returned_json["museums"][0]["name"]).to eq "ICA"
-      expect(returned_json["museums"][1]["name"]).to eq "Boston Children's Museum"
+      expect(returned_json["museums"][1]["name"]).to eq "Museum 1"
     end
   end
 end
