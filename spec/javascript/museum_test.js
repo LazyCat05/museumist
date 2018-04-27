@@ -6,7 +6,7 @@ describe('Museum', () => {
   beforeEach(() => {
     wrapper = mount(
       <Museum
-        name = "Boston Children's Museum"
+        name = "Boston Children's Museum" 
       />
     );
   });

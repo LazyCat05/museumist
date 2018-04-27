@@ -35,7 +35,7 @@ fetch(`/api/v1/museums/${museumId}`)
 render() {
     return(
         <div>
-        <div><b>Details of Museum:</b></div>
+        <div><h1>Details of Museum:</h1></div>
         <div>
           <h1>{this.state.museumInfo.name}</h1><br/>
           <p>{this.state.museumInfo.location}</p><br/>
