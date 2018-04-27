@@ -35,6 +35,7 @@ class GenreListContainer extends Component {
     let genreComponents = this.state.genres.map((genre) => {
       return (
         <Genre
+          id={genre.id}
           key={ genre.id }
           name={ genre.name }
         />

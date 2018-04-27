@@ -7,5 +7,13 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :genres, only: [:index, :show]
     end
+  end 
+
+  resources :museums, only: [:index, :show]
+
+  namespace :api do
+    namespace :v1 do
+      resources :museums, only: [:index, :show]
+    end
   end
 end
