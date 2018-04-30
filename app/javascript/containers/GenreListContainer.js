@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-
-import Genre from "../components/Genre";
+import { Link } from 'react-router';
 
 class GenreListContainer extends Component {
   constructor(props) {
@@ -34,18 +33,18 @@ class GenreListContainer extends Component {
   render() {
     let genreComponents = this.state.genres.map((genre) => {
       return (
-        <Genre
-          id={genre.id}
-          key={ genre.id }
-          name={ genre.name }
-        />
-      );
+        <li key={genre.id}>
+          <Link to={`genres/${genre.id}`}>{ genre.name }</Link>
+        </li>
+          );
     });
 
     return (
       <div id="genre-list">
         <h1>Genres</h1>
-        { genreComponents }
+        <ul>
+          { genreComponents }
+        </ul>
       </div>
     );
   }

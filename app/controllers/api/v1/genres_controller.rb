@@ -6,7 +6,8 @@ class Api::V1::GenresController < ApiController
   end
 
   def show
-    render json: { genre: Genre.find(params[:id]) }
+    # render json: { genre: Genre.find(params[:id]) }
+    render json: Genre.find(params[:id]), serializer: GenreShowSerializer
   end
 
 end
