@@ -33,18 +33,29 @@ class GenreListContainer extends Component {
   render() {
     let genreComponents = this.state.genres.map((genre) => {
       return (
-        <li key={genre.id}>
+        <div className="panel" key={genre.id}>
           <Link to={`genres/${genre.id}`}>{ genre.name }</Link>
-        </li>
+        </div>
           );
     });
 
     return (
       <div id="genre-list">
+
         <h1>Genres</h1>
-        <ul>
-          { genreComponents }
-        </ul>
+        <div id="genre-description">
+          <h3>Click on one of the genres to explore the museums</h3>
+        </div>
+          <div className="row">
+            <div className="small-4 columns border-box">{genreComponents[0]}</div>
+            <div className="small-4 columns">{genreComponents[1]}</div>
+            <div className="small-4 columns">{genreComponents[2]}</div>
+          </div>
+          <div className="row">
+            <div className="small-4 columns">{genreComponents[3]}</div>
+            <div className="small-4 columns">{genreComponents[4]}</div>
+            <div className="small-4 columns">{genreComponents[5]}</div>
+          </div>
       </div>
     );
   }

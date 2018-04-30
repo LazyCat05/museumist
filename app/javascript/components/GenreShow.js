@@ -25,12 +25,10 @@ fetch(`/api/v1/genres/${genreId}`)
 })
 .then(response => response.json())
 .then(body => {
-  console.log(body)
   this.setState({
     name: body.name,
     museum_list: body.museum_list
   });
-
 })
 .catch(error => console.error(`Error in fetch: ${error.message}`));
 }

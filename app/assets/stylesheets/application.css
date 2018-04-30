@@ -16,16 +16,31 @@
 
  */
 
- body {
+.panel{
+  background: #2D415B;
+  text-align: center;
+  /* font-family: Imprima */
+}
+
+body {
    background: #9C98A6;
    font-family: sans-serif;
    color: #FBFBFA;
  }
 
 h1 {
-  color: #FBFBFA
+  color: #FBFBFA;
+  text-align: center;
 }
 
+#genre-description{
+  text-align: center;
+
+}
+
+#genre-description h3{
+  color: #FBFBFA;
+}
 
 a {
 color: #FBFBFA;
