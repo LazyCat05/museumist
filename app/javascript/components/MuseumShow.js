@@ -1,10 +1,12 @@
 import React from 'react';
+import ReviewsContainer from '../containers/ReviewsContainer'
 
 class MuseumShow extends React.Component {
   constructor(props){
       super(props)
       this.state = {
-        museumInfo: {}
+        museumInfo: {},
+        reviews: []
       }
 }
 
@@ -25,7 +27,8 @@ fetch(`/api/v1/museums/${museumId}`)
 .then(body => {
   console.log(body)
   this.setState({
-    museumInfo: body.museum
+    museumInfo: body,
+    reviews: body.review_list
   });
 
 })
@@ -33,6 +36,7 @@ fetch(`/api/v1/museums/${museumId}`)
 }
 
 render() {
+  console.log(this.state.museumInfo)
     return(
         <div>
         <div><h1>Details of Museum:</h1></div>
@@ -43,9 +47,17 @@ render() {
           <p>{this.state.museumInfo.founding_date}</p><br/>
           <p>{this.state.museumInfo.url}</p>
         </div>
+        <div>
+          <ReviewsContainer
+            reviews = {this.state.reviews}
+          />
+        </div>
       </div>
       )
     }
 }
+
+
+
 
 export default MuseumShow;
