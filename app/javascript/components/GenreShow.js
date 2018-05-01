@@ -36,9 +36,9 @@ fetch(`/api/v1/genres/${genreId}`)
 render() {
   let museumComponents = this.state.museum_list.map((museum) => {
     return (
-      <li key={museum.id}>
+      <div className="panel" key={museum.id}>
         <Link to={`/museums/${museum.id}`}>{ museum.name }</Link>
-      </li>
+      </div>
         );
   });
 

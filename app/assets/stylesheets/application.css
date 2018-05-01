@@ -19,37 +19,59 @@
 .panel{
   background: #2D415B;
   text-align: center;
-  /* font-family: Imprima */
 }
 
 body {
    background: #9C98A6;
-   font-family: sans-serif;
    color: #FBFBFA;
+   font-family: 'Imprima';font-size: 22px;
  }
 
 h1 {
   color: #FBFBFA;
   text-align: center;
+  font-family: 'Imprima';
 }
 
-#genre-description{
-  text-align: center;
-
-}
-
-#genre-description h3{
+h2{
+  font-family: 'Imprima';font-size: 30px;
   color: #FBFBFA;
 }
 
 a {
-color: #FBFBFA;
+  color: #FBFBFA;
+}
+
+#genre-description{
+  text-align: center;
+}
+
+#genre-description h3{
+  color: #FBFBFA;
+  font-family: 'Imprima';font-size: 22px;
+}
+
+.right {
+  font-family: 'Imprima';font-size: 22px;
+}
+
+.button {
+  background: #2D415B
 }
 
 .top-bar {
   background: #2D415B
 }
 
-.title-area {
+#error_explanation{
+  color: #8B0000
+}
 
+.flash-alert{
+    color: #8B0000
+}
+
+.field {
+ font-size: 15px;
+ color: #2D415B
 }

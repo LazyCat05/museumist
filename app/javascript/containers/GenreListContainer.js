@@ -46,15 +46,15 @@ class GenreListContainer extends Component {
         <div id="genre-description">
           <h3>Click on one of the genres to explore the museums</h3>
         </div>
-          <div className="row">
-            <div className="small-4 columns border-box">{genreComponents[0]}</div>
-            <div className="small-4 columns">{genreComponents[1]}</div>
-            <div className="small-4 columns">{genreComponents[2]}</div>
-          </div>
-          <div className="row">
-            <div className="small-4 columns">{genreComponents[3]}</div>
-            <div className="small-4 columns">{genreComponents[4]}</div>
-            <div className="small-4 columns">{genreComponents[5]}</div>
+        <div className="row" >
+          <div className="small-4  large-4  columns">{genreComponents[0]}</div>
+          <div className="small-4  large-4 columns">{genreComponents[1]}</div>
+          <div className="small-4  large-4 columns">{genreComponents[2]}</div>
+        </div>
+        <div className="row">
+          <div className="small-4 large-4 columns">{genreComponents[3]}</div>
+          <div className="small-4 large-4 columns">{genreComponents[4]}</div>
+          <div className="small-4 large-4 columns">{genreComponents[5]}</div>
           </div>
       </div>
     );

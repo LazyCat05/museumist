@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router';
 class MuseumShow extends React.Component {
   constructor(props){
       super(props)
@@ -37,13 +37,13 @@ render() {
         <div>
           <div><h1>Details of Museum:</h1></div>
           <div>
-            <h1>{this.state.museumInfo.name}</h1><br/>
-            <p>{this.state.museumInfo.location}</p><br/>
-            <p>{this.state.museumInfo.description}</p><br/>
-            <p>{this.state.museumInfo.founding_date}</p><br/>
-          <p>{this.state.museumInfo.url}</p>
+            <h1>{this.state.museumInfo.name}</h1>
+            <p>{this.state.museumInfo.location}</p>
+            <p>{this.state.museumInfo.description}</p>
+            <p>{this.state.museumInfo.founding_date}</p>
+            <p><a href={this.state.museumInfo.url} target="_blank">{this.state.museumInfo.url}</a></p>
+          </div>
         </div>
-      </div>
       )
     }
 }
