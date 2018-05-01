@@ -6,6 +6,6 @@ class Api::V1::MuseumsController < ApiController
   end
 
   def show
-    render json: { museum: Museum.find(params[:id]) }
+    render json: Museum.find(params[:id]), serializer: MuseumShowSerializer
   end
 end

@@ -4,4 +4,5 @@ class Museum < ApplicationRecord
 
   has_many :museum_genres
   has_many :genres, through: :museum_genres
+  has_many :reviews
 end

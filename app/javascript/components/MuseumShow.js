@@ -4,7 +4,8 @@ class MuseumShow extends React.Component {
   constructor(props){
       super(props)
       this.state = {
-        museumInfo: {}
+        museumInfo: {},
+        reviews: []
       }
 }
 
@@ -25,7 +26,8 @@ fetch(`/api/v1/museums/${museumId}`)
 .then(body => {
   console.log(body)
   this.setState({
-    museumInfo: body.museum
+    museumInfo: body,
+    reviews: body.reviews
   });
 
 })
@@ -43,9 +45,17 @@ render() {
             <p>{this.state.museumInfo.founding_date}</p>
             <p><a href={this.state.museumInfo.url} target="_blank">{this.state.museumInfo.url}</a></p>
           </div>
+          <div>
+            <ReviewsContainer
+              reviews = {this.state.reviews}
+            />
+          </div>
         </div>
       )
     }
 }
+
+
+
 
 export default MuseumShow;
