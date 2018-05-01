@@ -4,8 +4,6 @@ RSpec.describe Api::V1::MuseumsController, type: :controller do
     ica = create(:museum, name: "ICA", location: "Boston")
     create_list(:museum, 2)
     create(:museum, name: "Boston Children's Museum", location: "Boston")
-    create(:review, body: "It was nice", rating: 4, museum: ica)
-    create(:review, body: "It was not nice", rating: 1, museum: ica)
   end
   describe "GET#index" do
     it "should return a list of all the museums" do
@@ -22,15 +20,18 @@ RSpec.describe Api::V1::MuseumsController, type: :controller do
   describe "GET#show" do
     it "should return a single museum" do
       ica = create(:museum, name: "ICA", location: "Boston")
-      get api_v1_museum_path(ica)
-      save_and_open_page
+      user1 = create(:user)
+      user2 = create(:user)
+      create(:review, user: user1, body: "It was nice", rating: 4, museum: ica)
+      create(:review, user: user2, body: "It was not nice", rating: 1, museum: ica)
+      get :show, params: { id: ica.id }
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200
       expect(response.content_type).to eq 'application/json'
-      expect(returned_json).length.to eq 1
+      expect(returned_json.length).to eq 7
       expect(returned_json["name"]).to eq "ICA"
-      expect(returned_json["review_list"].length).to eq 2
-      expect(returned_json["review_list"][0]["body"]).to eq "It was nice"
+      expect(returned_json["reviews"].length).to eq 2
+      expect(returned_json["reviews"][0]["body"]).to eq "It was nice"
     end
   end
 end

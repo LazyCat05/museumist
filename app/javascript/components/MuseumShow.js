@@ -28,7 +28,7 @@ fetch(`/api/v1/museums/${museumId}`)
   console.log(body)
   this.setState({
     museumInfo: body,
-    reviews: body.review_list
+    reviews: body.reviews
   });
 
 })
@@ -36,7 +36,6 @@ fetch(`/api/v1/museums/${museumId}`)
 }
 
 render() {
-  console.log(this.state.museumInfo)
     return(
         <div>
         <div><h1>Details of Museum:</h1></div>
