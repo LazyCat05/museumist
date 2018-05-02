@@ -28,7 +28,7 @@ RSpec.describe Api::V1::MuseumsController, type: :controller do
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200
       expect(response.content_type).to eq 'application/json'
-      expect(returned_json.length).to eq 7
+      expect(returned_json.length).to eq 8
       expect(returned_json["name"]).to eq "ICA"
       expect(returned_json["reviews"].length).to eq 2
       expect(returned_json["reviews"][0]["body"]).to eq "It was nice"
