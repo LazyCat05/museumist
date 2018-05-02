@@ -9,8 +9,6 @@ class ReviewForm extends React.Component {
       reviewRating: '1',
       reviewBody: '',
       errors: {}
-      // reveiwUser: {}
-
     }
     this.handleRatingInput = this.handleRatingInput.bind(this)
     this.handleBodyInput = this.handleBodyInput.bind(this)
@@ -79,7 +77,6 @@ class ReviewForm extends React.Component {
     let errorItems;
 
     if(Object.keys(this.state.errors).length > 0) {
-    // debugger
     errorItems = Object.values(this.state.errors).map(error => {
     return(<li key={error}>{error}</li>)
     })
