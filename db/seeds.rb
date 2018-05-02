@@ -4,6 +4,8 @@ natdouglas = User.create(username: "natdouglas", first_name:"Natalie", last_name
 meghas = User.create(username: "meghas", first_name:"Megha", last_name: "Bellary", email: "megha4@hotmail.com", password: "123456")
 themaikol = User.create(username: "themaikol", first_name:"Maikol", last_name: "Etcheverry", email: "maikol@hotmail.com", password: "123456")
 
+
+
 science=Genre.create({ name: "Science" })
 childrens=Genre.create({ name: "Children's" })
 maritime=Genre.create({ name: "Maritime" })
@@ -50,3 +52,5 @@ Review.create(body:"It was an awesome place", rating: 5, user: scream, museum: d
 Review.create(body:"Great museum", rating: 4, user: meghas, museum: decordova_museum )
 Review.create(body:"Top place", rating: 5, user: natdouglas, museum: museum_bad_art )
 Review.create(body:"bottom place", rating: 1, user: meghas, museum: museum_bad_art )
+User.create(email: "example@example.com", username: "LazyCat05", first_name: "Tim", last_name: "Hollis", password: "123456")
+User.create(email: "exampleemail@test.com", username: "TestUser", first_name: "Test", last_name:"User", password: "123456")

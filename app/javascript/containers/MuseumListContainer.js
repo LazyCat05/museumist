@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-import Museum from "../components/Museum";
+import { Link } from 'react-router';
 
 class MuseumListContainer extends Component {
   constructor(props) {
@@ -34,15 +33,11 @@ class MuseumListContainer extends Component {
 
   render() {
     let museumComponents = this.state.museums.map((museum) => {
-
       return (
-        <Museum
-          key={ museum.id }
-          name={ museum.name }
-          id={ museum.id }
-
-        />
-      );
+        <div className="panel" key={museum.id}>
+          <Link to={`museums/${museum.id}`}>{ museum.name }</Link>
+        </div>
+          );
     });
 
     return (

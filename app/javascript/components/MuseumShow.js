@@ -1,6 +1,6 @@
 import React from 'react';
-import ReviewsContainer from '../containers/ReviewsContainer'
-
+import { Link } from 'react-router';
+import ReviewsContainer from '../containers/ReviewsContainer';
 class MuseumShow extends React.Component {
   constructor(props){
       super(props)
@@ -28,7 +28,7 @@ fetch(`/api/v1/museums/${museumId}`)
   console.log(body)
   this.setState({
     museumInfo: body,
-    reviews: body.review_list
+    reviews: body.reviews
   });
 
 })
@@ -36,23 +36,22 @@ fetch(`/api/v1/museums/${museumId}`)
 }
 
 render() {
-  console.log(this.state.museumInfo)
     return(
         <div>
-        <div><h1>Details of Museum:</h1></div>
-        <div>
-          <h1>{this.state.museumInfo.name}</h1><br/>
-          <p>{this.state.museumInfo.location}</p><br/>
-          <p>{this.state.museumInfo.description}</p><br/>
-          <p>{this.state.museumInfo.founding_date}</p><br/>
-          <p>{this.state.museumInfo.url}</p>
+          <div><h1>Details of Museum:</h1></div>
+          <div>
+            <h1>{this.state.museumInfo.name}</h1>
+            <p>{this.state.museumInfo.location}</p>
+            <p>{this.state.museumInfo.description}</p>
+            <p>{this.state.museumInfo.founding_date}</p>
+            <p><a href={this.state.museumInfo.url} target="_blank">{this.state.museumInfo.url}</a></p>
+          </div>
+          <div>
+            <ReviewsContainer
+              reviews = {this.state.reviews}
+            />
+          </div>
         </div>
-        <div>
-          <ReviewsContainer
-            reviews = {this.state.reviews}
-          />
-        </div>
-      </div>
       )
     }
 }
