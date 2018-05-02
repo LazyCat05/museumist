@@ -103,7 +103,4 @@ render() {
     }
 }
 
-
-
-
 export default MuseumShow;
