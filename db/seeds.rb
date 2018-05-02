@@ -1,10 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Genre.create({ name: "Science" })
+Genre.create({ name: "Children's" })
+Genre.create({ name: "Maritime" })
+Genre.create({ name: "Natural History" })
+Genre.create({ name: "Modern" })
+Genre.create({ name: "Memorial" })
+
 
 Museum.create(name:"Heritage Museums and Gardens", location:"67 Grove Street, Sandwich, MA 02563", description:"Engaging Exhibit and 100 acres of gardens and nature trails", founding_date:"01/03/2010", url: "https://heritagemuseumsandgardens.org/")
 Museum.create(name:"Boston Children's Museum", location: "308 Congress St., Boston, MA 02210",description:"Boston Children’s Museum is the second oldest, and one of the most influential children’s museums in the world.", founding_date:"01/01/1913", url: "http://www.bostonchildrensmuseum.org/")
@@ -13,6 +13,11 @@ Museum.create(name:"Museum of Fine Arts", location:"465 Huntington Avenue, Bosto
 User.create(email: "example@example.com", username: "LazyCat05", first_name: "Tim", last_name: "Hollis", password: "123456")
 User.create(email: "exampleemail@test.com", username: "TestUser", first_name: "Test", last_name:"User", password: "123456")
 
+MuseumGenre.create(museum_id: 1, genre_id: 1)
+MuseumGenre.create(museum_id: 1, genre_id: 2)
+MuseumGenre.create(museum_id: 1, genre_id: 3)
+MuseumGenre.create(museum_id: 2, genre_id: 1)
+MuseumGenre.create(museum_id: 2, genre_id: 2)
 
 Review.create(museum_id: 1, user_id: 1, body:"the museum was ok", rating: 4)
 Review.create(museum_id: 1, user_id: 2, body:"Lots of arts.", rating: 4)

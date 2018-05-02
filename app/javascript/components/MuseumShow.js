@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router';
 import ReviewsContainer from '../containers/ReviewsContainer'
 import ReviewForm from '../containers/ReviewForm'
-
 class MuseumShow extends React.Component {
   constructor(props){
       super(props)
@@ -72,19 +72,21 @@ render() {
   let errorDiv = <div>{this.state.errorMessage}</div>
     return(
         <div>
-        <div><h1>Details of Museum:</h1></div>
-        <div>
-          <h1>{this.state.museumInfo.name}</h1><br/>
-          <p>{this.state.museumInfo.location}</p><br/>
-          <p>{this.state.museumInfo.description}</p><br/>
-          <p>{this.state.museumInfo.founding_date}</p><br/>
-          <p>{this.state.museumInfo.url}</p>
+          <div><h1>Details of Museum:</h1></div>
+          <div>
+            <h1>{this.state.museumInfo.name}</h1>
+            <p>{this.state.museumInfo.location}</p>
+            <p>{this.state.museumInfo.description}</p>
+            <p>{this.state.museumInfo.founding_date}</p>
+            <p><a href={this.state.museumInfo.url} target="_blank">{this.state.museumInfo.url}</a></p>
+          </div>
+          <div>
+            <ReviewsContainer
+              reviews = {this.state.reviews}
+            />
+          </div>
         </div>
-        <div>
-          <ReviewsContainer
-            reviews = {this.state.reviews}
-          />
-        </div>
+<<<<<<< HEAD
         <div>
           {errorDiv}
           <ReviewForm
@@ -93,6 +95,8 @@ render() {
           />
         </div>
       </div>
+=======
+>>>>>>> master
       )
     }
 }

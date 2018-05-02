@@ -14,7 +14,7 @@ RSpec.describe Api::V1::MuseumsController, type: :controller do
       expect(returned_json.length).to eq 1
       expect(returned_json["museums"].length).to eq 4
       expect(returned_json['museums'][0]["name"]).to eq "ICA"
-      expect(returned_json['museums'][1]["name"]).to eq "Museum 1"
+      expect(returned_json['museums'][1]["name"]).to eq "Museum 3"
     end
   end
   describe "GET#show" do
