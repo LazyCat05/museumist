@@ -85,18 +85,14 @@ render() {
               reviews = {this.state.reviews}
             />
           </div>
+          <div>
+            {errorDiv}
+            <ReviewForm
+              museumId = {this.state.museumInfo.id}
+              addNewReview = {this.addNewReview}
+            />
+          </div>
         </div>
-<<<<<<< HEAD
-        <div>
-          {errorDiv}
-          <ReviewForm
-            museumId = {this.state.museumInfo.id}
-            addNewReview = {this.addNewReview}
-          />
-        </div>
-      </div>
-=======
->>>>>>> master
       )
     }
 }
