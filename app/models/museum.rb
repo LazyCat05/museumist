@@ -3,4 +3,6 @@ class Museum < ApplicationRecord
   validates :location, presence: true, exclusion: { in: [nil] }
 
   has_many :reviews
+  has_many :museum_genres
+  has_many :genres, through: :museum_genres
 end

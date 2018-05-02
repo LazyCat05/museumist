@@ -4,6 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.string :body, null:false
       t.integer :rating, null:false
       t.belongs_to :museum
+      t.belongs_to :user 
 
       t.timestamps
     end

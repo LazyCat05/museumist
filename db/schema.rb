@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_26_022454) do
+ActiveRecord::Schema.define(version: 2018_05_01_153536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "museum_genres", force: :cascade do |t|
+    t.bigint "museum_id"
+    t.bigint "genre_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_museum_genres_on_genre_id"
+    t.index ["museum_id"], name: "index_museum_genres_on_museum_id"
+  end
 
   create_table "museums", force: :cascade do |t|
     t.string "name", null: false
@@ -29,9 +44,11 @@ ActiveRecord::Schema.define(version: 2018_04_26_022454) do
     t.string "body", null: false
     t.integer "rating", null: false
     t.bigint "museum_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["museum_id"], name: "index_reviews_on_museum_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,6 +67,7 @@ ActiveRecord::Schema.define(version: 2018_04_26_022454) do
     t.string "username", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
+    t.string "profile_photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
