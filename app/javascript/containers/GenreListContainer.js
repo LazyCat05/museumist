@@ -41,21 +41,25 @@ class GenreListContainer extends Component {
 
     return (
       <div id="genre-list">
-
-        <h1>Genres</h1>
+        <div>
+          <h1>Genres</h1>
+        </div>
         <div id="genre-description">
           <h3>Click on one of the genres to explore the museums</h3>
         </div>
+
         <div className="row" >
           <div className="small-12 medium-4 columns">{genreComponents[0]}</div>
           <div className="small-12 medium-4 columns">{genreComponents[1]}</div>
           <div className="small-12 medium-4 columns">{genreComponents[2]}</div>
-        </div>
-        <div className="row">
+
           <div className="small-12 medium-4 columns">{genreComponents[3]}</div>
           <div className="small-12 medium-4 columns">{genreComponents[4]}</div>
           <div className="small-12 medium-4 columns">{genreComponents[5]}</div>
-          </div>
+          <div className="small-12 medium-4 columns">{genreComponents[6]}</div>
+          <div className="small-12 medium-4 columns">{genreComponents[7]}</div>
+        </div>
+
       </div>
     );
   }
