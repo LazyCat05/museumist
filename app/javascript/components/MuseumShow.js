@@ -1,13 +1,46 @@
 import React from 'react';
 import ReviewsContainer from '../containers/ReviewsContainer'
+import ReviewForm from '../containers/ReviewForm'
 
 class MuseumShow extends React.Component {
   constructor(props){
       super(props)
       this.state = {
         museumInfo: {},
-        reviews: []
+        reviews: [],
+        errorMessage: ''
       }
+      this.addNewReview = this.addNewReview.bind(this)
+
+}
+
+addNewReview(formPayload) {
+  fetch('/api/v1/reviews.json', {
+    credentials: 'same-origin',
+    method: 'post',
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify(formPayload)
+  })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(responseReview => {
+      if (responseReview['id'] == 'error message') {
+        this.setState({ errorMessage: responseReview['body'] })
+      } else {
+        let newReviews = this.state.reviews.concat(responseReview)
+        this.setState({
+          reviews: newReviews,
+          errorMessage: ''
+        })
+    }
+    })
 }
 
 componentDidMount(){
@@ -36,6 +69,7 @@ fetch(`/api/v1/museums/${museumId}`)
 }
 
 render() {
+  let errorDiv = <div>{this.state.errorMessage}</div>
     return(
         <div>
         <div><h1>Details of Museum:</h1></div>
@@ -49,6 +83,13 @@ render() {
         <div>
           <ReviewsContainer
             reviews = {this.state.reviews}
+          />
+        </div>
+        <div>
+          {errorDiv}
+          <ReviewForm
+            museumId = {this.state.museumInfo.id}
+            addNewReview = {this.addNewReview}
           />
         </div>
       </div>
