@@ -45,9 +45,11 @@ render() {
     return(
       <div id="museum-list">
         <h1> {this.state.name} </h1>
-        <ul>
-          { museumComponents }
-        </ul>
+        <div className="small-12 medium-8 columns medium-centered">
+          <ul>
+            { museumComponents }
+          </ul>
+        </div>
       </div>
       )
     }

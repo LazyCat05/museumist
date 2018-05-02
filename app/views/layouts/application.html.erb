@@ -10,16 +10,18 @@
     <%= javascript_pack_tag 'application' %>
   <%= csrf_meta_tags %>
  <link href='https://fonts.googleapis.com/css?family=Imprima' rel='stylesheet'>
-</head>
-<body>
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
+</head>
+
+<body>
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
         <h1><a href="/">Museumist</a></h1>
       </li>
     </ul>
-
+<div class="SignIn">
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
@@ -31,8 +33,17 @@
         <%- end -%>
       </ul>
     </section>
-  </nav>
+  </div>
 
+    <script>
+      function goBack() {
+        window.history.back()
+      }
+    </script>
+  </nav>
+  <div class="gobackbutton">
+  <button class="button tiny" onclick="goBack()">Go Back</button>
+  </div>
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>

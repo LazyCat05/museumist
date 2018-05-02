@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { Link } from 'react-router';
 
 class MuseumListContainer extends Component {
@@ -43,7 +44,9 @@ class MuseumListContainer extends Component {
     return (
       <div id="museum-list">
         <h1>Museums</h1>
-        { museumComponents }
+        <div className="small-12 medium-8 columns medium-centered">
+          { museumComponents }
+        </div>
       </div>
     );
   }
