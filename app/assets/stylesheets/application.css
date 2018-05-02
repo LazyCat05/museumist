@@ -19,6 +19,7 @@
 .panel{
   background: #2D415B;
   text-align: center;
+
 }
 
 body {
@@ -36,6 +37,10 @@ h1 {
 h2{
   font-family: 'Imprima';font-size: 30px;
   color: #FBFBFA;
+}
+
+h3{
+  font-family: 'Imprima'
 }
 
 a {
@@ -56,7 +61,8 @@ a {
 }
 
 .button {
-  background: #2D415B
+  background: #2D415B;
+  font-family: 'Imprima';
 }
 
 .top-bar {
@@ -74,4 +80,55 @@ a {
 .field {
  font-size: 15px;
  color: #2D415B
+}
+
+.museum-details-box p{
+color: #FBFBFA;
+}
+
+.museum-details-box h1{
+color: #FBFBFA;
+}
+
+.museum-details-box h3{
+  color: #FBFBFA;
+}
+
+.topleft {
+  position: inherit;
+  top: 10px;
+  left: 15px;
+}
+
+.tiny {
+  font-family: 'Imprima';
+}
+
+.gobackbutton {
+  padding: .5rem .5rem .825rem;
+}
+
+.signup1 {
+  padding-left: 1rem;
+}
+
+.signupbutton {
+  padding-right: 2rem;
+}
+
+.forgotpassword {
+  color: green;
+}
+
+p{
+  font-family: 'Imprima'
+}
+
+.fa-star {
+  color: #FBFBFA;
+}
+
+.right {
+  background: #2D415B;
+  font-family: 'Imprima';
 }

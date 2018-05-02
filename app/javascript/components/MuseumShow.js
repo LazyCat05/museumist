@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
+import ReviewsContainer from "../containers/ReviewsContainer";
+
 class MuseumShow extends React.Component {
   constructor(props){
       super(props)
@@ -38,19 +40,23 @@ render() {
     return(
         <div>
           <div><h1>Details of Museum:</h1></div>
-          <div>
-            <h1>{this.state.museumInfo.name}</h1>
-            <p>{this.state.museumInfo.location}</p>
-            <p>{this.state.museumInfo.description}</p>
-            <p>{this.state.museumInfo.founding_date}</p>
-            <p><a href={this.state.museumInfo.url} target="_blank">{this.state.museumInfo.url}</a></p>
+          <div className="museum-details-box">
+            <div className="panel medium-10 columns medium-centered">
+              <h1>{this.state.museumInfo.name}</h1>
+              <p>{this.state.museumInfo.location}</p>
+              <p>{this.state.museumInfo.description}</p>
+              <p>{this.state.museumInfo.founding_date}</p>
+              <p><a href={this.state.museumInfo.url} target="_blank">{this.state.museumInfo.url}</a></p>
+            </div>
           </div>
-          <div>
-            <ReviewsContainer
-              reviews = {this.state.reviews}
-            />
+          <div className="museum-details-box">
+            <div className="panel medium-10 columns medium-centered">
+              <ReviewsContainer
+                reviews = {this.state.reviews}
+              />
+            </div>
           </div>
-        </div>
+          </div>
       )
     }
 }
