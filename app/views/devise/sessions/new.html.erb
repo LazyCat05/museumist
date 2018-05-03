@@ -21,9 +21,11 @@
     </div>
   <% end -%>
 
-  <div class="actions small-8 columns">
-    <%= f.submit "Log in", :class => 'button small radius' %>
-  </div>
+  <ul class="button-group">
+    <div class="actions small-8 columns">
+      <%= f.submit "Log in", :class => 'button small radius' %>
+    </div>
+  </ul>
 <% end %>
 
 <%= render "devise/shared/links" %>

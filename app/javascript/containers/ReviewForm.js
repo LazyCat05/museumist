@@ -84,9 +84,10 @@ class ReviewForm extends React.Component {
   }
 
     return(
-      <div>Add a review!
+      <div>
+        <h2 className="add-a-review">Add a review!</h2>
         {errorDiv}
-        <form onSubmit={this.handleSubmit}>
+        <form className="field small-8 columns" onSubmit={this.handleSubmit}>
           <RatingField
             content={this.state.reviewRating}
             label="Museum Rating (1-5)"
@@ -100,8 +101,11 @@ class ReviewForm extends React.Component {
             handleInput={this.handleBodyInput}
           />
           <div>
-            <button onClick={this.clearFields}></button>
-            <input type="submit" value="Add Review"/>
+            <ul className="button-group">
+            <input type="submit" className="button radius" value="Clear" onClick={this.clearFields}/>
+            &nbsp;
+            <input type="submit" value="Add Review" className="button radius"/>
+          </ul>
           </div>
         </form>
       </div>

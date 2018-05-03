@@ -71,7 +71,22 @@ fetch(`/api/v1/museums/${museumId}`)
 
 render() {
   let errorDiv = <div>{this.state.errorMessage}</div>
-    return(
+  let starcomponent = []
+  let roundedValue = Math.round(this.state.museumInfo.review_average)
+  console.log(roundedValue)
+  let difference =  roundedValue - this.state.museumInfo.review_average
+  let star = <i className="fas fa-star"></i>
+  let halfStar = <i className="fas fa-star-half"></i>
+
+    for (let i = 0; i < roundedValue; i++) {
+      starcomponent.push(star)
+    }
+
+  if (difference > 0.5){
+    starcomponent.push(halfStar)
+  }
+
+  return(
         <div>
           <div><h1>Details of Museum:</h1></div>
           <div className="museum-details-box">
@@ -80,6 +95,8 @@ render() {
               <p>{this.state.museumInfo.location}</p>
               <p>{this.state.museumInfo.description}</p>
               <p>{this.state.museumInfo.founding_date}</p>
+                <p>{this.state.museumInfo.review_average}</p>
+                <p>{starcomponent}</p>
               <p><a href={this.state.museumInfo.url} target="_blank">{this.state.museumInfo.url}</a></p>
             </div>
           </div>
