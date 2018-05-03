@@ -13,7 +13,6 @@
     <% if @museums %>
       <% @museums.each do |museum| %>
         <h2><%= link_to museum.name, museum_path(museum) %></h2>
-        <p id="delete"><%= link_to "Delete this Museum", admin_museum_path(museum), method: :delete %></p>
       <% end %>
     <% end %>
   </div>

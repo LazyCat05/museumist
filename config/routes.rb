@@ -23,8 +23,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'admins#index'
-    resources :genres, only: [:index, :create, :destroy]
-    resources :museums, only: [:index, :create, :destroy]
-    resources :users, only: [:index, :create, :destroy]
+    resources :genres, only: [:index, :create, :edit, :update]
+    resources :museums, only: [:index, :create, :edit, :update]
+    resources :users, only: [:index, :create, :edit, :update]
   end
 end

@@ -23,13 +23,7 @@ class Admin::UsersController < AdminController
       redirect_to users_path, :alert => "Unable to update user."
     end
   end
-
-  def destroy
-    user = User.find(params[:id])
-    user.destroy
-    redirect_to users_path, :notice => "User deleted."
-  end
-
+  
   private
 
   def admin_only

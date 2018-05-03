@@ -11,10 +11,22 @@
 <div class="row">
   <div class="small-6 columns">
     <% if @genres %>
-      <% @genres.each do |genre| %>
-        <h2><%= link_to genre.name, genre_path(genre) %></h2>
-        <p id="delete"><%= link_to "Delete this Genre", admin_genre_path(genre), method: :delete %></p>
-      <% end %>
+      <table>
+        <thead>
+          <tr>
+            <th>Genres</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% @genres.each do |genre| %>
+            <tr>
+              <td><%= genre.name %></td>
+              <td><%= link_to 'Show', genre_path(genre) %></td>
+              <td><%= link_to 'Edit', edit_admin_genre_path(genre) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     <% end %>
   </div>
 </div>

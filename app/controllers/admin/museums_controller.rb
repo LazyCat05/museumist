@@ -1,10 +1,18 @@
 class Admin::MuseumsController < AdminController
   before_action :authenticate_user!
   before_action :require_admin
+  before_action :set_museum, only: [:edit, :update]
 
   def index
     @museums = Museum.all
     @museum = Museum.new
+  end
+
+  def new
+    @museum = Museum.new
+  end
+
+  def edit
   end
 
   def create
@@ -17,18 +25,22 @@ class Admin::MuseumsController < AdminController
     end
   end
 
-  def destroy
-    @museum = Museum.find(params[:id])
-    if @museum.destroyable_by?(current_user)
-      @museum.destroy
-      flash[:notice] = "Museum has been deleted"
-      redirect_to admin_museums_path
+  def update
+    if @museum.update(museum_params)
+      redirect_to admin_museums_path, notice: 'Museum was successfully updated.'
+    else
+      @errors = @museum.errors.full_messages
+      render :edit
     end
   end
 
   protected
+  # Use callbacks to share common setup or constraints between actions.
+  def set_museum
+    @museum = Museum.find(params[:id])
+  end
 
-  def genre_params
+  def museum_params
     params.require(:museum).permit(:name)
   end
 end
