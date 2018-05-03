@@ -25,6 +25,5 @@ Rails.application.routes.draw do
     root 'admins#index'
     resources :genres, only: [:index, :create, :edit, :update]
     resources :museums, only: [:index, :create, :edit, :update]
-    resources :users, only: [:index, :create, :edit, :update]
   end
 end

@@ -1,19 +1,32 @@
 <%= render 'shared/errors' if @errors%>
-<div class="small-12 columns">
+<div class='small-12 columns'>
   <h1>Museumist Museums</h1>
 </div>
 
-<div class="small-12 columns">
+<div class='small-12 columns'>
   <h4>Add a Museum</h4>
-  <%= render "new" %>
+  <%= render 'form' %>
 </div>
 
-<div class="row">
-  <div class="small-6 columns">
+<div class='row'>
+  <div class='small-6 columns'>
     <% if @museums %>
-      <% @museums.each do |museum| %>
-        <h2><%= link_to museum.name, museum_path(museum) %></h2>
-      <% end %>
+      <table>
+        <thead>
+          <tr>
+            <th>Museums</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% @museums.each do |museum| %>
+            <tr>
+              <td><%= museum.name %></td>
+              <td><%= link_to 'Show', museum_path(museum) %></td>
+              <td><%= link_to 'Edit', edit_admin_museum_path(museum) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     <% end %>
   </div>
 </div>

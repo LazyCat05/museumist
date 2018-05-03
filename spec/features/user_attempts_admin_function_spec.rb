@@ -39,6 +39,5 @@ feature 'user attempts to access admin functionality', %Q{
 
     expect(page).to have_content('Genre Admin Functions')
     expect(page).to have_content('Museum Admin Functions')
-    expect(page).to have_content('User Admin Functions')
   end
 end

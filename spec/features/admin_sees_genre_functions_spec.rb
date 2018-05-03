@@ -30,7 +30,6 @@ feature 'admin user accesses genre admin functionality', %Q{
 
     expect(page).to have_content('Genre Admin Functions')
     expect(page).to have_content('Museum Admin Functions')
-    expect(page).to have_content('User Admin Functions')
 
     click_link 'Genre Admin Functions'
 

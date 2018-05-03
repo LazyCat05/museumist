@@ -1,8 +1,0 @@
-<%= form_for(@user,
-      url: [:admin, @user],
-      html: { multipart: true}) do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-
-  <%= f.submit "Submit" %>
-<% end %>

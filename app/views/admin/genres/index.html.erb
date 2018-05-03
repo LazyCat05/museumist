@@ -1,15 +1,15 @@
 <%= render 'shared/errors' if @errors%>
-<div class="small-12 columns">
+<div class='small-12 columns'>
   <h1>Museumist Genres</h1>
 </div>
 
-<div class="small-12 columns">
+<div class='small-12 columns'>
   <h4>Add a Genre</h4>
-  <%= render "new" %>
+  <%= render 'form' %>
 </div>
 
-<div class="row">
-  <div class="small-6 columns">
+<div class='row'>
+  <div class='small-6 columns'>
     <% if @genres %>
       <table>
         <thead>
