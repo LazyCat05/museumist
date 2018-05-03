@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Admin::UsersController < AdminController
   before_action :authenticate_user!
   before_action :require_admin
 
@@ -39,6 +39,6 @@ class UsersController < ApplicationController
   end
 
   def secure_params
-    params.require(:user).permit(:role)
+    params.require(:user).permit(:username)
   end
 end

@@ -1,0 +1,20 @@
+<%= render 'shared/errors' if @errors%>
+<div class="small-12 columns">
+  <h1>Museumist Users</h1>
+</div>
+
+<div class="small-12 columns">
+  <h4>Add a User</h4>
+  <%= render "new" %>
+</div>
+
+<div class="row">
+  <div class="small-6 columns">
+    <% if @users %>
+      <% @users.each do |user| %>
+        <h2><%= link_to user.username, user_path(user) %></h2>
+        <p id="delete"><%= link_to "Delete this User", admin_user_path(user), method: :delete %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

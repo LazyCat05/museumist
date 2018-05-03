@@ -1,4 +1,4 @@
-class MuseumsController < AdminController
+class Admin::MuseumsController < AdminController
   before_action :authenticate_user!
   before_action :require_admin
 

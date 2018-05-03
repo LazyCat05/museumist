@@ -1,0 +1,12 @@
+<%= render 'shared/errors' if @errors%>
+<div class="small-12 columns">
+  <h1>Administrative Functions</h1>
+</div>
+
+<div class="row">
+  <div class="small-6 columns">
+    <%= link_to "Genre Admin Functions", admin_genres_path %>
+    <%= link_to "Museum Admin Functions", admin_museums_path %>
+    <%= link_to "User Admin Functions", admin_users_path %>
+  </div>
+</div>
