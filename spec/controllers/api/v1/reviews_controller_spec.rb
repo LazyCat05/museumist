@@ -42,4 +42,23 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
 
     end
   end
+  it 'should return an error if a user tries to post two reviews to the same museum' do
+    iczm = create(:museum, name: 'International Cryptozoology Museum', location: 'Portland, Maine')
+    user1 = create(:user)
+    create(:review, museum_id: iczm.id, rating: 5, body: "I took my picture with bigfoot!", user_id: user1.id)
+    sign_in(user1, scope: :user)
+
+    post_json = {museum_id: iczm.id, rating: 1, body: "Not enough on sea monsters"}.to_json
+
+    post(:create, body: post_json)
+    returned_json = JSON.parse(response.body)
+    expect(response.status).to eq 200
+    expect(response.content_type).to eq('application/json')
+
+    expect(returned_json).to be_kind_of(Hash)
+    expect(returned_json).to_not be_kind_of(Array)
+    expect(returned_json['id']).to eq 'error message'
+    expect(returned_json['body']).to eq 'One review to a user, please!'
+
+  end
 end
