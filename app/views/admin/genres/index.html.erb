@@ -5,22 +5,25 @@
 
 <div class='small-12 columns'>
   <h4>Add a Genre</h4>
-  <%= render 'form' %>
+  <div class="small-8 columns">
+  <%= render 'form'%>
+</div>
 </div>
 
 <div class='row'>
+  <div class="genres-table">
   <div class='small-6 columns'>
     <% if @genres %>
       <table>
         <thead>
           <tr>
-            <th>Genres</th>
+            <th class="genre-heading">Genres</th>
           </tr>
         </thead>
         <tbody>
             <% @genres.each do |genre| %>
             <tr>
-              <td><%= genre.name %></td>
+              <td class="genre-name"><%= genre.name %></td>
               <td><%= link_to 'Show', genre_path(genre) %></td>
               <td><%= link_to 'Edit', edit_admin_genre_path(genre) %></td>
             </tr>
@@ -29,4 +32,5 @@
       </table>
     <% end %>
   </div>
+</div>
 </div>

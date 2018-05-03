@@ -42,6 +42,12 @@ h2{
 h3{
   font-family: 'Imprima'
 }
+h4{
+  font-family: 'Imprima';
+  padding-left: 1rem;
+  color: #FBFBFA
+
+}
 
 a {
   color: #FBFBFA;
@@ -120,6 +126,36 @@ color: #FBFBFA;
   color: green;
 }
 
+.genres-table{
+  background: #2D415B
+}
+
+.genre-name {
+  color: #FBFBFA;
+}
+
+table{
+  background: #2D415B;
+  color: #FBFBFA
+}
+
+.genre-heading{
+  color: #FBFBFA;
+}
+
+.row ul{
+  font-size: 20px
+}
+
+.flash{
+  padding-left: 1rem
+}
+
+td,th,tr{
+  background: #2D415B;
+  color: #FBFBFA
+}
+
 p{
   font-family: 'Imprima'
 }
@@ -131,4 +167,13 @@ p{
 .right {
   background: #2D415B;
   font-family: 'Imprima';
+}
+
+.update-h2-profile {
+  padding-left: 1rem;
+  text-align: left;
+}
+
+.choose-file {
+  padding-left: 1rem;
 }
