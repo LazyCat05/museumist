@@ -82,7 +82,7 @@ render() {
       starcomponent.push(star)
     }
 
-  if (difference > 0.5){
+  if (difference >= 0.5){
     starcomponent.push(halfStar)
   }
 
