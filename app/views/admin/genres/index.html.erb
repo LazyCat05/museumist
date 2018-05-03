@@ -1,0 +1,20 @@
+<%= render 'shared/errors' if @errors%>
+<div class="small-12 columns">
+  <h1>Museumist Genres</h1>
+</div>
+
+<div class="small-12 columns">
+  <h4>Add a Genre</h4>
+  <%= render "new" %>
+</div>
+
+<div class="row">
+  <div class="small-6 columns">
+    <% if @genres %>
+      <% @genres.each do |genre| %>
+        <h2><%= link_to genre.name, genre_path(genre) %></h2>
+        <p id="delete"><%= link_to "Delete this Genre", admin_genre_path(genre), method: :delete %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

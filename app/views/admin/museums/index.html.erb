@@ -1,0 +1,20 @@
+<%= render 'shared/errors' if @errors%>
+<div class="small-12 columns">
+  <h1>Museumist Museums</h1>
+</div>
+
+<div class="small-12 columns">
+  <h4>Add a Museum</h4>
+  <%= render "new" %>
+</div>
+
+<div class="row">
+  <div class="small-6 columns">
+    <% if @museums %>
+      <% @museums.each do |museum| %>
+        <h2><%= link_to museum.name, museum_path(museum) %></h2>
+        <p id="delete"><%= link_to "Delete this Museum", admin_museum_path(museum), method: :delete %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
