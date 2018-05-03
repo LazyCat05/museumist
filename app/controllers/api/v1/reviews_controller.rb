@@ -6,13 +6,25 @@ class Api::V1::ReviewsController < ApiController
 
   def create
     data = JSON.parse(request.body.read)
+    error = { id: 'error message', body: ''}
     new_review = Review.new(body: data["body"], rating: data["rating"], museum_id: data["museum_id"])
     post_user = current_user
-    new_review.user = post_user
-    if new_review.save
+    if !post_user
+      error[:body] = "Please log in to leave a review"
+    else
+      post_user.reviews.each do |review|
+        if review.museum_id == new_review.museum_id
+          error[:body] = "One review to a user, please!"
+        end
+      end
+    end
+    if error[:body] == ''
+      new_review.user = post_user
+    end
+    if new_review.valid?
+      new_review.save
       render json: new_review
     else
-      error = { id: "error message", body: "Please log in to leave a review"}
       render json: error
     end
   end
