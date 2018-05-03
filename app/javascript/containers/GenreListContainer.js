@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import { Link } from 'react-router';
+import SearchApp from '../components/SearchApp';
 
 class GenreListContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { genres: [] };
+    this.state = {
+      genres: [],
+      searchText: '',
+      searchResults: []
+    };
     this.getGenres = this.getGenres.bind(this);
+    this.updateSearchResults = this.updateSearchResults.bind(this);
   }
 
   getGenres() {
@@ -30,35 +36,63 @@ class GenreListContainer extends Component {
     this.getGenres();
   }
 
-  render() {
-    let genreComponents = this.state.genres.map((genre) => {
+  createGenreTile(array) {
+
+    let displayedGenresArray = array.map( (genre) =>{
       return (
         <div className="panel" key={genre.id}>
           <Link to={`genres/${genre.id}`}>{ genre.name }</Link>
         </div>
-          );
-    });
+      )
+    })
+    return displayedGenresArray
+  }
+
+  updateSearchResults(searchText) {
+    let tempResults = []
+    this.state.genres.forEach((genre) => {
+      if (genre.name.toLowerCase().includes(searchText.toLowerCase())) {
+        tempResults.push(genre)
+      }
+    })
+
+    this.setState({
+      searchText: searchText,
+      searchResults: tempResults
+    })
+  }
+
+  render() {
+    // let genreComponents = this.state.genres.map((genre) => {
+    //   return (
+    //     <div className="panel" key={genre.id}>
+    //       <Link to={`genres/${genre.id}`}>{ genre.name }</Link>
+    //     </div>
+    //       );
+    // });
+
+    let displayedGenres;
+
+    if (this.state.searchText === '') {
+      displayedGenres = this.createGenreTile(this.state.genres)
+    } else {
+      displayedGenres = this.createGenreTile(this.state.searchResults)
+    }
 
     return (
       <div id="genre-list">
         <div>
           <h1>Genres</h1>
         </div>
+        <SearchApp
+            updateSearchResults={this.updateSearchResults}
+          />
         <div id="genre-description">
           <h3>Click on one of the genres to explore the museums</h3>
         </div>
+        {displayedGenres}
 
-        <div className="row" >
-          <div className="small-12 medium-4 columns">{genreComponents[0]}</div>
-          <div className="small-12 medium-4 columns">{genreComponents[1]}</div>
-          <div className="small-12 medium-4 columns">{genreComponents[2]}</div>
 
-          <div className="small-12 medium-4 columns">{genreComponents[3]}</div>
-          <div className="small-12 medium-4 columns">{genreComponents[4]}</div>
-          <div className="small-12 medium-4 columns">{genreComponents[5]}</div>
-          <div className="small-12 medium-4 columns">{genreComponents[6]}</div>
-          <div className="small-12 medium-4 columns">{genreComponents[7]}</div>
-        </div>
 
       </div>
     );
