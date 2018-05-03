@@ -8,7 +8,7 @@ const ReviewsContainer = (props) => {
         key = {review.id}
         rating = {review.rating}
         text = {review.body}
-        user = {review.user_name}
+        user = {review.user_name} 
       />
     )
   })
