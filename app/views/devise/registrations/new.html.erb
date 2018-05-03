@@ -41,11 +41,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-<div class="signupbutton">
-  <div class="actions small-6 columns">
-    <%= f.submit "Sign up", :class => 'button radius' %>
-  </div>
-</div>
+  <ul class="button-group">
+    <div class="actions small-6 columns">
+      <%= f.submit "Sign up", :class => 'button radius' %>
+    </div>
+  </ul>
 <% end %>
 
 <%= render "devise/shared/links" %>
