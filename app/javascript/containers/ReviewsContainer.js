@@ -10,6 +10,7 @@ const ReviewsContainer = (props) => {
         rating = {review.rating}
         text = {review.body}
         user = {review.user_name}
+        museumId = {props.museumId}
         vote_total = {review.vote_total}
         vote_value = {review.vote_value}
       />

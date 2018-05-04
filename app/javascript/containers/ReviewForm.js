@@ -60,7 +60,6 @@ class ReviewForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     if(this.validateReviewRating(this.state.reviewRating) && this.validateReviewBody(this.state.reviewBody)) {
-      console.log(this.state.reviewBody)
       let formPayload = {
         rating: this.state.reviewRating,
         body: this.state.reviewBody,
@@ -71,8 +70,6 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-    console.log(this.state.reviewRating)
-    console.log(this.state.reviewBody)
     let errorDiv;
     let errorItems;
 
@@ -84,9 +81,10 @@ class ReviewForm extends React.Component {
   }
 
     return(
-      <div>Add a review!
+      <div>
+        <h2 className="add-a-review">Add a review!</h2>
         {errorDiv}
-        <form onSubmit={this.handleSubmit}>
+        <form className="field small-8 columns" onSubmit={this.handleSubmit}>
           <RatingField
             content={this.state.reviewRating}
             label="Museum Rating (1-5)"
@@ -100,8 +98,11 @@ class ReviewForm extends React.Component {
             handleInput={this.handleBodyInput}
           />
           <div>
-            <button onClick={this.clearFields}></button>
-            <input type="submit" value="Add Review"/>
+            <ul className="button-group">
+            <input type="submit" className="button radius" value="Clear" onClick={this.clearFields}/>
+            &nbsp;
+            <input type="submit" value="Add Review" className="button radius"/>
+          </ul>
           </div>
         </form>
       </div>

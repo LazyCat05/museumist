@@ -1,0 +1,13 @@
+<%= render 'shared/errors' if @errors%>
+<div class="medium-8 columns medium-centered">
+  <h1>Administrative Console</h1>
+</div>
+
+<div class="row">
+  <ul class="panel medium-10 columns medium-centered">
+      <%= link_to "Genre Admin Functions", admin_genres_path %>
+  </ul>
+  <ul class="panel medium-10 columns medium-centered">
+      <%= link_to "Museum Admin Functions", admin_museums_path %>
+  </ul>
+</div>
