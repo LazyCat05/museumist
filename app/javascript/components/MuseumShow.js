@@ -93,6 +93,7 @@ class MuseumShow extends React.Component {
         <div className="museum-details-box">
           <div className="panel medium-10 columns medium-centered">
             <h1>{this.state.museumInfo.name}</h1>
+            <img src={this.state.museumInfo.image_url} width="300" height="200" />
             <p>{this.state.museumInfo.location}</p>
             <p>{this.state.museumInfo.description}</p>
             <p>{this.state.museumInfo.founding_date}</p>
