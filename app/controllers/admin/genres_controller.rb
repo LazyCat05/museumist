@@ -18,7 +18,7 @@ class Admin::GenresController < AdminController
   def create
     @genre = Genre.new(genre_params)
     if @genre.save
-      redirect_to admin_genres_path, notice: "Genre Added!"
+      redirect_to admin_genres_path, notice: "Your new genre #{@genre.name} was saved successfully."
     else
       @errors = @genre.errors.full_messages
       render :index
@@ -27,7 +27,7 @@ class Admin::GenresController < AdminController
 
   def update
     if @genre.update(genre_params)
-      redirect_to admin_genres_path, notice: 'Genre was successfully updated.'
+      redirect_to admin_genres_path, notice: "#{@genre.name} was successfully updated."
     else
       @errors = @genre.errors.full_messages
       render :edit
