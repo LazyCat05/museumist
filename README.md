@@ -8,7 +8,7 @@
 Museumist is a project dedicated to finding some of the best selection of museums in the Greater Boston area. Utilizing this application, you will be able to find a museum based on genre and then find a wide selection of museums based on your taste. You may also search a specific genre based on the the categories listed.
 
 ## Features:
-1. Developed with Ruby on Rails
+1. Developed with Ruby-on-Rails
 2. Styled with Foundation/CSS
 3. Incorporates React
 4. CarrierWave
