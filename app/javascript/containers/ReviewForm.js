@@ -75,7 +75,7 @@ class ReviewForm extends React.Component {
 
     if(Object.keys(this.state.errors).length > 0) {
     errorItems = Object.values(this.state.errors).map(error => {
-    return(<li key={error}>{error}</li>)
+    return(<p key={error}>{error}</p>)
     })
     errorDiv = <div className="callout alert">{errorItems}</div>
   }

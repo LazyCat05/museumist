@@ -70,7 +70,7 @@ class Review extends React.Component {
 
       console.log(this.state.voteTotal)
 
-      let messageDiv = <div><p>{this.state.voteMessage}</p></div>
+      let messageDiv = <div><p className="callout alert">{this.state.voteMessage}</p></div>
 
 
     return(
@@ -79,7 +79,7 @@ class Review extends React.Component {
         <p>Rating: {starcomponent}</p>
         <p>Votes: {this.state.voteTotal}</p>
         <p>{this.props.text}</p>
-        <div>{this.state.voteMessage}</div>
+        <div>{messageDiv}</div>
         <div className = 'thumbs'>
           <VoteIcon
           icon = 'far fa-thumbs-up'
