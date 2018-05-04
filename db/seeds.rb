@@ -1,8 +1,8 @@
-scream = User.create(username: "Scream", first_name:"Ernesto", last_name: "Camou", email: "ok999@hotmail.com", password: "123456")
-lazycat05 = User.create(username: "LazyCat05", first_name:"Tim", last_name: "Hollis", email: "tim@tim.com", password: "123456")
+scream = User.create(username: "Scream", first_name:"Ernesto", last_name: "Camou", role: "admin", email: "ok999@hotmail.com", password: "123456")
+lazycat05 = User.create(username: "LazyCat05", first_name:"Tim", last_name: "Hollis", role: "admin", email: "tim@tim.com", password: "123456")
 natdouglas = User.create(username: "natdouglas", first_name:"Natalie", last_name: "Douglas", role: "admin", email: "natalie@gmail.com", password: "123456")
-meghas = User.create(username: "meghas", first_name:"Megha", last_name: "Bellary", email: "megha4@hotmail.com", password: "123456")
-themaikol = User.create(username: "themaikol", first_name:"Maikol", last_name: "Etcheverry", email: "maikol@hotmail.com", password: "123456")
+meghas = User.create(username: "meghas", first_name:"Megha", last_name: "Bellary", role: "admin", email: "megha4@hotmail.com", password: "123456")
+themaikol = User.create(username: "themaikol", first_name:"Maikol", last_name: "Etcheverry", role: "admin", email: "maikol@hotmail.com", password: "123456")
 
 science=Genre.create({ name: "Science" })
 childrens=Genre.create({ name: "Children's" })
