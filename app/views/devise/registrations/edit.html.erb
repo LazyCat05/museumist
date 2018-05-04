@@ -56,6 +56,10 @@
     <div class="actions small-8 columns">
         <%= f.submit "Update", :class => 'button small radius' %>
     <% end %>
-        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'button small radius'%>
-  </div>
-</ul>
+    </div>
+  </ul>
+        <!-- <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'button small radius'%> -->
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'button small radius' %></p>
+
+<%= link_to "Back", :back %>
