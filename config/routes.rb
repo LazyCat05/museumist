@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :genres, only: [:index, :show]
     end
-  end 
+  end
 
   resources :museums, only: [:index, :show]
 
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
         resources :reviews, only: [:index]
       end
       resources :reviews, only: [:create]
+      resources :votes, only: [:create, :index]
     end
   end
 end
