@@ -68,7 +68,7 @@ class MuseumShow extends React.Component {
   }
 
   render() {
-    let errorDiv = <div>{this.state.errorMessage}</div>
+    let errorDiv = <div className="react-message">{this.state.errorMessage}</div>
 
     let starComponent = [];
 

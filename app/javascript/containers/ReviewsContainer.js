@@ -11,6 +11,8 @@ const ReviewsContainer = (props) => {
         text = {review.body}
         user = {review.user_name}
         museumId = {props.museumId}
+        vote_total = {review.vote_total}
+        vote_value = {review.vote_value}
       />
     )
   })
