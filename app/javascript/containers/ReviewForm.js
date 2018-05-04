@@ -60,7 +60,6 @@ class ReviewForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     if(this.validateReviewRating(this.state.reviewRating) && this.validateReviewBody(this.state.reviewBody)) {
-      console.log(this.state.reviewBody)
       let formPayload = {
         rating: this.state.reviewRating,
         body: this.state.reviewBody,
@@ -71,8 +70,6 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-    console.log(this.state.reviewRating)
-    console.log(this.state.reviewBody)
     let errorDiv;
     let errorItems;
 

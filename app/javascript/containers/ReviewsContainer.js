@@ -6,9 +6,11 @@ const ReviewsContainer = (props) => {
     return(
       <Review
         key = {review.id}
+        id = {review.id}
         rating = {review.rating}
         text = {review.body}
-        user = {review.user_name} 
+        user = {review.user_name}
+        museumId = {props.museumId}
       />
     )
   })
