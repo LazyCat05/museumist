@@ -109,13 +109,14 @@ class MuseumShow extends React.Component {
           </div>
         </div>
 
-        <div>
-          {errorDiv}
-          <ReviewForm
-            museumId = {this.state.museumInfo.id}
-            addNewReview = {this.addNewReview}
-          />
-        </div>
+
+        <div className="small-12 medium-10 columns medium-centered">
+            {errorDiv}
+            <ReviewForm
+              museumId = {this.state.museumInfo.id}
+              addNewReview = {this.addNewReview}
+            />
+          </div>
       </div>
     )
   }

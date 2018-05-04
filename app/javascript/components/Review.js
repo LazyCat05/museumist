@@ -19,7 +19,7 @@ const Review = (props) => {
   }
 
   return(
-    <div>
+    <div className="panel">
       <p>Review by: {props.user}</p>
       <p>Rating: {starComponent}</p>
       <p>{props.text}</p>
