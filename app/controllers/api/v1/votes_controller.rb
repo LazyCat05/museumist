@@ -12,7 +12,8 @@ class Api::V1::VotesController < ApiController
     else
       posting_user.votes.each do |vote|
         if vote.review_id == posted_vote.review_id && vote.value == posted_vote.value
-          message[:body] = "Your vote has already been recorded"
+          vote.update_attribute(:value, 0)
+          message[:body] = "Your vote has been updated"
         elsif vote.review_id == posted_vote.review_id && vote.value != posted_vote.value
           vote.update_attribute(:value, posted_vote.value)
           message[:body] = "Your vote has been updated"
