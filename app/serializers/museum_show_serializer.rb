@@ -1,6 +1,7 @@
 class MuseumShowSerializer < ActiveModel::Serializer
-  attributes :id, :name, :location, :description, :founding_date, :url, :review_average
+  attributes :id, :name, :location, :description, :founding_date, :url, :review_average, :image_url
   has_many :reviews
+
 
   #Calculate review average for the specific museum shown
   def review_average

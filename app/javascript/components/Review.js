@@ -1,30 +1,98 @@
-import React from 'react';
+import React from 'react'
+import VoteIcon from './VoteIcon'
 
-const Review = (props) => {
-  let starComponent = [];
-
-  if (props.rating >= 1) {
-    const reviewAverageFraction =  props.rating - Math.trunc(props.rating);
-
-    for (let i = 0; i < props.rating; i++) {
-      starComponent.push(<i key={props.museumId.toString().concat(props.id.toString().concat(i.toString()))} className="fas fa-star"></i>);
+class Review extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      voteTotal: this.props.vote_total,
+      voteMessage: ''
     }
+    this.addNewVote = this.addNewVote.bind(this)
+    this.handlePlusOneClick = this.handlePlusOneClick.bind(this)
+    this.handleMinusOneClick = this.handleMinusOneClick.bind(this)
 
-    if (reviewAverageFraction >= 0.5){
-      starComponent.push(<i key={props.museumId.toString().concat(props.id.toString().concat((starComponent.length).toString()))} className="fas fa-star-half"></i>)
-    }
-  }
-  else if (props.rating >= 0.5) {
-    starComponent.push(<i key={props.museumId.toString().concat(props.id.toString().concat((starComponent.length).toString()))} className="fas fa-star-half"></i>)
   }
 
-  return(
-    <div className="panel">
-      <p>Review by: {props.user}</p>
-      <p>Rating: {starComponent}</p>
-      <p>{props.text}</p>
-    </div>
-  )
+  handlePlusOneClick(event) {
+    event.preventDefault()
+    let voteResult = {
+      value: "1",
+      review: this.props.id
+    }
+    this.addNewVote(voteResult)
+  }
+
+  handleMinusOneClick(event) {
+    event.preventDefault()
+    let voteResult = {
+      value: "-1",
+      review: this.props.id
+    }
+    this.addNewVote(voteResult)
+  }
+
+  addNewVote(voteResult) {
+    fetch('/api/v1/votes.json', {
+      credentials: 'same-origin',
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(voteResult)
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(responseMessage => {
+      console.log(responseMessage)
+      this.setState({
+        voteMessage: responseMessage['body'],
+        voteTotal: responseMessage['vote_total']
+      })
+    })
+  }
+
+
+
+  render(){
+      // let upvoteStyle, downvoteStyle
+      // if this.props.voteValue
+      let starcomponent = []
+      let star = <i className="fas fa-star"></i>
+      for (let i = 0; i < this.props.rating; i++) {
+        starcomponent.push(star)
+      }
+
+      console.log(this.state.voteTotal)
+
+      let messageDiv = <div><p className="callout alert">{this.state.voteMessage}</p></div>
+
+
+    return(
+      <div className="panel">
+        <p>Review by: {this.props.user}</p>
+        <p>Rating: {starcomponent}</p>
+        <p>Votes: {this.state.voteTotal}</p>
+        <p>{this.props.text}</p>
+        <div>{messageDiv}</div>
+        <div className = 'thumbs'>
+          <VoteIcon
+          icon = 'far fa-thumbs-up'
+          ifClicked = {this.handlePlusOneClick}
+            />
+          <VoteIcon
+          icon = "far fa-thumbs-down"
+          ifClicked = {this.handleMinusOneClick}
+            />
+      </div>
+      </div>
+    )
+  }
 }
 
 export default Review;

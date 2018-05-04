@@ -14,7 +14,7 @@ RSpec.describe Api::V1::MuseumsController, type: :controller do
       expect(returned_json.length).to eq 1
       expect(returned_json["museums"].length).to eq 4
       expect(returned_json['museums'][0]["name"]).to eq "ICA"
-      expect(returned_json['museums'][1]["name"]).to eq "Museum 3"
+      expect(returned_json['museums'][1]["name"]).to eq "Museum 1"
     end
   end
   describe "GET#show" do
@@ -28,7 +28,7 @@ RSpec.describe Api::V1::MuseumsController, type: :controller do
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200
       expect(response.content_type).to eq 'application/json'
-      expect(returned_json.length).to eq 8
+      expect(returned_json.length).to eq 9
       expect(returned_json["name"]).to eq "ICA"
       expect(returned_json["reviews"].length).to eq 2
       expect(returned_json["reviews"][0]["body"]).to eq "It was nice"

@@ -14,7 +14,7 @@ garden_park=Genre.create({ name: "Garden/Park" })
 off_beaten_path=Genre.create({ name: "Off the Beaten Path" })
 
 heritage_museums_and_gardens=Museum.create(name:"Heritage Museums and Gardens", location:"67 Grove Street, Sandwich, MA 02563", description:"Engaging Exhibit and 100 acres of gardens and nature trails", founding_date:"01/03/2010", url: "https://heritagemuseumsandgardens.org/")
-boston_childrens_museum=Museum.create(name:"Boston Children's Museum", location: "308 Congress St., Boston, MA 02210", description:"Boston Children’s Museum is the second oldest, and one of the most influential children’s museums in the world.", founding_date:"01/01/1913", url: "http://www.bostonchildrensmuseum.org/")
+boston_childrens_museum=Museum.create(name:"Boston Children's Museum", location: "308 Congress St., Boston, MA 02210", description:"Boston Children’s Museum is the second oldest, and one of the most influential children’s museums in the world.", founding_date:"01/01/1913", url: "http://www.bostonchildrensmuseum.org/", image_url: "https://s3.amazonaws.com/launch-academy-museumist/museum_images/boston_childrens_museum.jpg")
 mfa_museum=Museum.create(name:"Museum of Fine Arts", location:"465 Huntington Avenue, Boston, MA 02115", description:"The MFA is one of the most comprehensive art museums in the world; the collection encompasses nearly 450,000 works of art.", founding_date:"07/04/1876", url: "http://www.mfa.org/")
 harvard_museum_of_natural_history=Museum.create(name:"Harvard Museum of Natural History", location:"26 Oxford Street, Cambridge, MA 02138", description:"The most visited museum on the historic Harvard University campus, the Harvard Museum of Natural History displays some 12,000 specimens, including dinosaurs, rare minerals, hundreds of mammals, birds, and Harvard's world famous Blaschka 'Glass Flowers'.", url:"https://hmnh.harvard.edu/")
 adams_national_historical_park=Museum.create(name:"Adams National Historical Park", location:"1250 Hancock Street, Adams National Historical Park Visitor Center, Quincy, MA 02169", description:"Travel back in time at the Adams National Historical Park, where you'll visit the birthplaces of not one, but two U.S. presidents: John Adams and his son, John Quincy Adams.", url:"https://www.nps.gov/adam/index.htm")
@@ -50,6 +50,3 @@ Review.create(body:"It was an awesome place", rating: 5, user: scream, museum: d
 Review.create(body:"Great museum", rating: 4, user: meghas, museum: decordova_museum )
 Review.create(body:"Top place", rating: 5, user: natdouglas, museum: museum_bad_art )
 Review.create(body:"bottom place", rating: 1, user: meghas, museum: museum_bad_art )
-
-User.create(email: "example@example.com", username: "LazyCat05", first_name: "Tim", last_name: "Hollis", password: "123456")
-User.create(email: "exampleemail@test.com", username: "TestUser", first_name: "Test", last_name:"User", password: "123456")
