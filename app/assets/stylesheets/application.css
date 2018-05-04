@@ -46,7 +46,6 @@ h4{
   font-family: 'Imprima';
   padding-left: 1rem;
   color: #FBFBFA
-
 }
 
 a {
@@ -76,7 +75,8 @@ a {
 }
 
 #error_explanation{
-  color: #8B0000
+  color: #8B0000;
+  padding-left: 1rem;
 }
 
 .flash-alert{
@@ -181,4 +181,20 @@ p{
 .choose-file,
 .add-a-review{
   padding-left: 1rem;
+}
+
+.hello-text {
+  padding-left: 2rem
+}
+
+.error-message {
+  padding-left: 1rem;
+}
+
+.museum-name {
+  color: #FBFBFA
+}
+
+.museum-heading {
+  color: #FBFBFA
 }

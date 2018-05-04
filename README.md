@@ -2,27 +2,26 @@
 [![Code Climate](https://api.codeclimate.com/v1/badges/6f2d8398afb6231e61a3/maintainability)](https://codeclimate.com/github/LazyCat05/museumist/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/LazyCat05/museumist/badge.svg?branch=master)](https://coveralls.io/github/LazyCat05/museumist?branch=master)
 
-# README
+# README - Museumist
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description:
+Museumist is a project dedicated to finding some of the best selection of museums in the Greater Boston area. Utilizing this application, you will be able to find a museum based on genre and then find a wide selection of museums based on your taste. You may also search a specific genre based on the the categories listed.
 
-Things you may want to cover:
+## Features:
+1. Developed with Ruby on Rails
+2. Styled with Foundation/CSS
+3. Incorporates React
+4. CarrierWave
+5. Developed using TDD
+6. Used Database Postgresql
 
-* Ruby version
 
-* System dependencies
+### Authors:
+* Ernesto Camou
+* Maikol Etcheverry
+* Megha Bellary
+* Natalie Douglas
+* Tim Hollis
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Deployed site:
+https://immense-springs-20504.herokuapp.com/ (should be opened in Chrome or Firefox)

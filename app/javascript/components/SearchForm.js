@@ -9,14 +9,13 @@ const SearchForm = props => {
     <input
       type='text'
       onChange={handleSearch}
-      placeholder="Search"
+      placeholder="Search museum genre!"
     />
   </span>;
 
   return(
-    <div>
-      "Hello!"
-      {Search}
+    <div className="hello-text">
+      {Search}<br/><br/>
     </div>
   );
 };

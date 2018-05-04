@@ -19,8 +19,10 @@ const ReviewsContainer = (props) => {
 
   return(
     <div>
-      <h3>Reviews:</h3>
-      {reviews}
+      <h3>Reviews</h3>
+      <div className= "small-12 medium-8 columns medium-centered">
+        {reviews}
+      </div>
     </div>
   )
 }

@@ -63,14 +63,6 @@ class GenreListContainer extends Component {
   }
 
   render() {
-    // let genreComponents = this.state.genres.map((genre) => {
-    //   return (
-    //     <div className="panel" key={genre.id}>
-    //       <Link to={`genres/${genre.id}`}>{ genre.name }</Link>
-    //     </div>
-    //       );
-    // });
-
     let displayedGenres;
 
     if (this.state.searchText === '') {
@@ -78,22 +70,24 @@ class GenreListContainer extends Component {
     } else {
       displayedGenres = this.createGenreTile(this.state.searchResults)
     }
-
     return (
       <div id="genre-list">
-        <div>
+        <SearchApp
+          updateSearchResults={this.updateSearchResults}
+        />
+        <div className="small-12 medium-8 medium-centered">
           <h1>Genres</h1>
         </div>
-        <SearchApp
-            updateSearchResults={this.updateSearchResults}
-          />
-        <div id="genre-description">
-          <h3>Click on one of the genres to explore the museums</h3>
+        <div className="small-12 medium-8 medium-centered">
+          <div id="genre-description">
+            <h3>Click on one of the genres to explore the museums</h3>
+          </div>
+          </div>
+        <div className="row">
+          <ul class="small-12 medium-8 columns medium-centered">
+            {displayedGenres}
+          </ul>
         </div>
-        {displayedGenres}
-
-
-
       </div>
     );
   }

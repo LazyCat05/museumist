@@ -74,7 +74,7 @@ class Review extends React.Component {
 
 
     return(
-      <div>
+      <div className="panel">
         <p>Review by: {this.props.user}</p>
         <p>Rating: {starcomponent}</p>
         <p>Votes: {this.state.voteTotal}</p>

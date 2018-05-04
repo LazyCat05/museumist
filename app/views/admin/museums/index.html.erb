@@ -14,13 +14,13 @@
       <table>
         <thead>
           <tr>
-            <th>Museums</th>
+            <th class="museum-heading">Museums</th>
           </tr>
         </thead>
         <tbody>
             <% @museums.each do |museum| %>
             <tr>
-              <td><%= museum.name %></td>
+              <td class="museum-name"><%= museum.name %></td>
               <td><%= link_to 'Show', museum_path(museum) %></td>
               <td><%= link_to 'Edit', edit_admin_museum_path(museum) %></td>
             </tr>

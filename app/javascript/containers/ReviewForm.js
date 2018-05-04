@@ -97,12 +97,12 @@ class ReviewForm extends React.Component {
             name="review-body"
             handleInput={this.handleBodyInput}
           />
-          <div>
+          <div className= "small-12 medium-8 columns">
             <ul className="button-group">
-            <input type="submit" className="button radius" value="Clear" onClick={this.clearFields}/>
-            &nbsp;
-            <input type="submit" value="Add Review" className="button radius"/>
-          </ul>
+              <input type="submit" className="button radius" value="Clear" onClick={this.clearFields}/>
+              &nbsp;
+              <input type="submit" value="Add Review" className="button radius"/>
+            </ul>
           </div>
         </form>
       </div>
