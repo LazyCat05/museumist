@@ -17,8 +17,10 @@ class Admin::MuseumsController < AdminController
 
   def create
     @museum = Museum.new(museum_params)
+    @museum.founding_date = museum_params[:founding_date].to_date
+
     if @museum.save
-      redirect_to admin_museums_path, notice: "Museum Added!"
+      redirect_to admin_museums_path, notice: "Your new museum #{@museum.name} was saved successfully."
     else
       @errors = @museum.errors.full_messages
       render :index
@@ -27,7 +29,7 @@ class Admin::MuseumsController < AdminController
 
   def update
     if @museum.update(museum_params)
-      redirect_to admin_museums_path, notice: 'Museum was successfully updated.'
+      redirect_to admin_museums_path, notice: "#{@museum.name} was successfully updated."
     else
       @errors = @museum.errors.full_messages
       render :edit
@@ -41,6 +43,6 @@ class Admin::MuseumsController < AdminController
   end
 
   def museum_params
-    params.require(:museum).permit(:name)
+    params.require(:museum).permit(:name, :location, :description, :founding_date, :url)
   end
 end
